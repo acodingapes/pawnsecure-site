@@ -239,15 +239,6 @@
 .about-card p,.about-card ul {
     margin-bottom: 22px;
 }
-/*.about-card ul {
-    margin-left: 0px;
-    padding-left: 0;
-    list-style-position: inside;
-}
-.about-card ul li {
-    margin-bottom: 12px;
-} */
-
 .about-card ul {
     list-style: none;
     padding: 0;
