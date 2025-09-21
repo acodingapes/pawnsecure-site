@@ -3,10 +3,6 @@
  const navLinks = document.querySelector(".nav-links");
  if (menuToggle) {
  menuToggle.addEventListener("click", () => {
-// navLinks.style.display =
-// navLinks.style.display === "flex" ? "none" : "flex";
-// });
-// } 
 navLinks.classList.toggle("show");
  });
 }
