@@ -1,4 +1,4 @@
- /* Global layout to push footer to bottom */
+ /* Global layout */
  html, body {
   height: 100%;
  }
@@ -6,16 +6,16 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins',sans-serif;
   line-height: 1.6;
   background: #fff;
   color: #333;
  }
- /* main grows to push footer down */
+ /* main  */
  main {
   flex: 1;
  }
- /* Navbar */
+ /* Navigation bar */
  header {
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@
   color: white;
   cursor: pointer;
  }
- /* Hero */
+ /* Hero section */
  .hero {
   text-align: center;
   padding: 80px 20px;
@@ -194,14 +194,7 @@
  }
  /* Responsive */
  @media (max-width: 768px) {
-  .highlights {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    margin: 15px 0;
-  }
-  .nav-links {
+    .nav-links {
     display: none;
     flex-direction: column;
     background: black;
@@ -209,14 +202,24 @@
     top: 70px;
     right: 20px;
     padding: 10px;
+ }
+ .nav-links.show {
+    display: flex;
+ }
+  .highlights {
+    flex-direction: column;
+    align-items: center;
   }
+  .card {
+    margin: 15px 0;
+  }
+
   .nav-links li {
     margin: 10px 0;
   }
   .menu-toggle {
     display: block;
   }
- 
 }
 
 /*about page card */
@@ -301,5 +304,122 @@
     display: inline-block;
     min-width: 200px;
 }
+ /* ========== How It Works (4-step) ========== */
+ :root {
+  --gold: #d4af37;
+  --muted: #666;
+  --card-bg: #ffffff;
+ }
+ .how-steps {
+  padding: 60px 20px;
+  background: #f8f8f8;
+ }
+ .how-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #111;
+ }
+ /* each step */
+ .how-step {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "img"
+    "body";
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 48px;
+ }
+ /* image area */
+ .how-step-img {
+  grid-area: img;
+ }
+ .how-step-img img {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;              /* rounded corners */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.04); /* subtle edge */
+ }
+ /* body area: number + text */
+ .how-step-body {
+  grid-area: body;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+ }
+ /* gold circular step number */
+ .step-number {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+ }
+ /* text */
+ .how-step-text h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #000;
+ }
+ .how-step-text p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 720px;
+ }
+ /* Desktop: side-by-side and alternate image position for variety */
+ @media (min-width: 900px) {
+  .how-step {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img body";
+  }
+  /* for every even .how-step (2nd, 4th, ...) swap areas */
+  .how-step:nth-of-type(even) {
+    grid-template-areas: "body img";
+  }
+  /* center the step-number vertically on larger screens */
+  .how-step-body { align-items: center; }
+ }
+/* Mobile tweaks */
+ @media (max-width: 899px) {
+ .how-step-body {
+ align-items: center;
+ }
+ .step-number {
+ width: 48px;
+ height: 48px;
+ font-size: 1rem;
+ }}
+
+ .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #d4af37;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+ }
+
+ .btn:hover {
+    background: #b8962f;
+    transform: translateY(-2px);
+ }
 
 
